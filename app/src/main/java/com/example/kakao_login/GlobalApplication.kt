@@ -1,12 +1,26 @@
 package com.example.kakao_login
 
 import android.app.Application
-import com.kakao.sdk.common.KakaoSdk
+import com.kakao.auth.KakaoSDK
 
 class GlobalApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-        KakaoSdk.init(this,"929e67c71fa46504167ae838a7b77d3b")
+
+        instance = this
+        KakaoSDK.init(KakaoSDKAdapter())
     }
 
+    override fun onTerminate() {
+        super.onTerminate()
+        instance = null
+    }
+    fun getGlobalApplicationContext() : GlobalApplication {
+        checkNotNull(instance) {"this application does not inherit com.kakao.GlobalApplication"}
+        return instance!!
+    }
+
+    companion object{
+        var instance: GlobalApplication? =null
+    }
 }

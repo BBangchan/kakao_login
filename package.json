@@ -1,0 +1,19 @@
+{
+  "name": "kakao_login",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BBangchan/kakao_login.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BBangchan/kakao_login/issues"
+  },
+  "homepage": "https://github.com/BBangchan/kakao_login#readme"
+}
